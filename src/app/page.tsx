@@ -108,7 +108,7 @@ export default function Home() {
       });
       if (!res.ok) throw new Error("Failed to send email");
       setStep(4);
-    } catch (_e) {
+    } catch {
       setError("Failed to send email. Please try again.");
     } finally {
       setSending(false);
