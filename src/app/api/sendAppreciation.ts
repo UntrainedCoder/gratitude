@@ -1,0 +1,69 @@
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+const templates = [
+  (name: string, message: string) => `
+    <div style="background:#ff9800;color:#fff;padding:32px;border-radius:16px;font-family:sans-serif;min-width:300px;min-height:180px;">
+      <h2 style="font-size:2rem;font-weight:bold;margin-bottom:8px;">Thank You, ${name}!</h2>
+      <p style="font-size:1.2rem;">${message}</p>
+    </div>
+  `,
+  (name: string, message: string) => `
+    <div style="border:2px solid #ff9800;color:#ff9800;padding:32px;border-radius:16px;font-family:sans-serif;min-width:300px;min-height:180px;">
+      <h2 style="font-size:2rem;font-weight:600;margin-bottom:8px;">Appreciation for ${name}</h2>
+      <p style="font-style:italic;">${message}</p>
+    </div>
+  `,
+  (name: string, message: string) => `
+    <div style="background:#fff;border:1px solid #ffcc80;color:#ff9800;padding:32px;border-radius:16px;font-family:sans-serif;min-width:300px;min-height:180px;">
+      <h2 style="font-size:1.5rem;font-weight:500;margin-bottom:8px;">${name}</h2>
+      <p style="font-size:1rem;">${message}</p>
+    </div>
+  `,
+  (name: string, message: string) => `
+    <div style="background:#fff3e0;color:#ef6c00;padding:32px;border-radius:16px;font-family:sans-serif;min-width:300px;min-height:180px;border:2px solid #ffb74d;">
+      <h2 style="font-size:2rem;font-weight:800;margin-bottom:8px;">${name}</h2>
+      <p style="font-size:1.2rem;font-weight:300;">${message}</p>
+    </div>
+  `,
+  (name: string, message: string) => `
+    <div style="background:linear-gradient(135deg,#ffb74d,#ff9800);color:#fff;padding:32px;border-radius:16px;font-family:sans-serif;min-width:300px;min-height:180px;">
+      <h2 style="font-size:2rem;font-weight:bold;margin-bottom:8px;">${name}</h2>
+      <p style="font-size:1rem;">${message}</p>
+    </div>
+  `,
+];
+
+export async function POST(req: NextRequest) {
+  const { name, message, templateIdx, recipientEmail, copyMe, userEmail } = await req.json();
+  if (!name || !message || templateIdx == null || !recipientEmail) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  // Configure your SMTP transport here
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const html = templates[templateIdx](name, message);
+  const mailOptions = {
+    from: process.env.SMTP_FROM || process.env.SMTP_USER,
+    to: recipientEmail,
+    subject: `You've been recognized!`,
+    html,
+    ...(copyMe && userEmail ? { cc: userEmail } : {}),
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+  }
+} 
