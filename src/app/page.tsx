@@ -65,8 +65,6 @@ const templates = [
   },
 ];
 
-const steps = ["Name", "Message", "Template", "Send/Download", "Thank You"];
-
 export default function Home() {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
@@ -83,7 +81,6 @@ export default function Home() {
   const handleDownload = async () => {
     setError("");
     setDownloadUrl(null);
-    // @ts-ignore
     const html2canvas = (await import("html2canvas")).default;
     const el = document.getElementById("template-preview");
     if (!el) return;
@@ -111,7 +108,7 @@ export default function Home() {
       });
       if (!res.ok) throw new Error("Failed to send email");
       setStep(4);
-    } catch (e) {
+    } catch (_e) {
       setError("Failed to send email. Please try again.");
     } finally {
       setSending(false);
@@ -287,7 +284,7 @@ export default function Home() {
     return (
       <section className="flex flex-col items-center justify-center flex-1 text-center py-24">
         <h2 className="text-3xl font-bold mb-4 text-orange-600">Thank you for spreading appreciation!</h2>
-        <p className="mb-8 text-orange-500">Your message has been sent/downloaded. You just made someone's day brighter.</p>
+        <p className="mb-8 text-orange-500">Your message has been sent/downloaded. You just made someone&apos;s day brighter.</p>
         <button
           className="bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold shadow hover:bg-orange-600 transition"
           onClick={() => {
