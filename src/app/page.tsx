@@ -108,16 +108,6 @@ export default function Home() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
 
-  // Animation states
-  const [animateIn, setAnimateIn] = useState(true);
-
-  useEffect(() => {
-    // Simple entrance animation for all steps
-    setAnimateIn(true);
-    const timer = setTimeout(() => setAnimateIn(false), 300);
-    return () => clearTimeout(timer);
-  }, [step]);
-
   const handleStepChange = (newStep: number) => {
     setStep(newStep);
   };
