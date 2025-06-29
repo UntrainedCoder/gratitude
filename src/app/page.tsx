@@ -6,60 +6,109 @@ const templates = [
   {
     id: 1,
     name: "Classic Orange",
-    className:
-      "bg-orange-500 text-white rounded-xl p-6 shadow-lg flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
+    className: "rounded-xl p-6 shadow-lg flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
     render: (name: string, message: string) => (
-      <div>
-        <h2 className="text-2xl font-bold mb-2">Thank You, {name}!</h2>
-        <p className="text-lg">{message}</p>
+      <div style={{ 
+        backgroundColor: '#f97316', 
+        color: '#ffffff',
+        borderRadius: '12px',
+        padding: '24px',
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '300px',
+        minHeight: '180px'
+      }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '8px' }}>Thank You, {name}!</h2>
+        <p style={{ fontSize: '18px' }}>{message}</p>
       </div>
     ),
   },
   {
     id: 2,
     name: "Elegant Border",
-    className:
-      "border-2 border-orange-500 text-orange-600 rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
     render: (name: string, message: string) => (
-      <div>
-        <h2 className="text-2xl font-semibold mb-2">Appreciation for {name}</h2>
-        <p className="italic">{message}</p>
+      <div style={{ 
+        border: '2px solid #f97316', 
+        color: '#ea580c',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '300px',
+        minHeight: '180px'
+      }}>
+        <h2 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '8px' }}>Appreciation for {name}</h2>
+        <p style={{ fontStyle: 'italic' }}>{message}</p>
       </div>
     ),
   },
   {
     id: 3,
     name: "Minimalist Card",
-    className:
-      "bg-white border border-orange-200 text-orange-500 rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
     render: (name: string, message: string) => (
-      <div>
-        <h2 className="text-xl font-medium mb-2">{name}</h2>
-        <p className="text-base">{message}</p>
+      <div style={{ 
+        backgroundColor: '#ffffff', 
+        border: '1px solid #fed7aa', 
+        color: '#f97316',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '300px',
+        minHeight: '180px'
+      }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '8px' }}>{name}</h2>
+        <p style={{ fontSize: '16px' }}>{message}</p>
       </div>
     ),
   },
   {
     id: 4,
     name: "Bold Header",
-    className:
-      "bg-orange-100 text-orange-700 rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] border-2 border-orange-300 transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
     render: (name: string, message: string) => (
-      <div>
-        <h2 className="text-2xl font-extrabold mb-2">{name}</h2>
-        <p className="text-lg font-light">{message}</p>
+      <div style={{ 
+        backgroundColor: '#ffedd5', 
+        color: '#c2410c', 
+        border: '2px solid #fdba74',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '300px',
+        minHeight: '180px'
+      }}>
+        <h2 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '8px' }}>{name}</h2>
+        <p style={{ fontSize: '18px', fontWeight: '300' }}>{message}</p>
       </div>
     ),
   },
   {
     id: 5,
     name: "Modern Block",
-    className:
-      "bg-gradient-to-br from-orange-400 to-orange-600 text-white rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl",
     render: (name: string, message: string) => (
-      <div>
-        <h2 className="text-2xl font-bold mb-2">{name}</h2>
-        <p className="text-base">{message}</p>
+      <div style={{ 
+        background: 'linear-gradient(135deg, #fb923c, #ea580c)', 
+        color: '#ffffff',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '300px',
+        minHeight: '180px',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+      }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '8px' }}>{name}</h2>
+        <p style={{ fontSize: '16px' }}>{message}</p>
       </div>
     ),
   },
@@ -120,12 +169,33 @@ export default function Home() {
     
     try {
       const html2canvas = (await import("html2canvas")).default;
-      const el = document.getElementById("template-preview");
-      if (!el) return;
-      const canvas = await html2canvas(el);
+      
+      // Find the selected template element
+      const templateElements = document.querySelectorAll('[id="template-preview"]');
+      const selectedElement = templateElements[0];
+      
+      if (!selectedElement) {
+        throw new Error("No template selected");
+      }
+      
+      const canvas = await html2canvas(selectedElement as HTMLElement, {
+        allowTaint: true,
+        useCORS: true
+      });
+      
       const url = canvas.toDataURL("image/png");
       setDownloadUrl(url);
-    } catch {
+      
+      // Trigger download automatically
+      const link = document.createElement('a');
+      link.download = `appreciation-for-${name}.png`;
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+    } catch (error) {
+      console.error('Download error:', error);
       setError("Failed to generate image. Please try again.");
     } finally {
       setIsDownloading(false);
@@ -271,13 +341,30 @@ export default function Home() {
             {templates.map((tpl, idx) => (
               <div
                 key={tpl.id}
-                className={`cursor-pointer border-2 transition-all duration-300 rounded-lg overflow-hidden ${templateIdx === idx ? "border-orange-600 scale-105 shadow-xl" : "border-transparent hover:border-orange-300"}`}
+                style={{
+                  cursor: 'pointer',
+                  border: templateIdx === idx ? '2px solid #ea580c' : '2px solid transparent',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                  transform: templateIdx === idx ? 'scale(1.05)' : 'scale(1)',
+                  transition: 'all 0.3s',
+                  boxShadow: templateIdx === idx ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
+                }}
                 onClick={() => setTemplateIdx(idx)}
               >
-                <div id={templateIdx === idx ? "template-preview" : undefined} className={tpl.className} style={{ width: "100%", height: 200 }}>
+                <div 
+                  id={templateIdx === idx ? "template-preview" : `template-${idx}`} 
+                  style={{ width: "100%", height: 200 }}
+                >
                   {tpl.render(name, message)}
                 </div>
-                <div className="mt-2 text-sm font-medium text-orange-700 p-2">{tpl.name}</div>
+                <div style={{ 
+                  marginTop: '8px', 
+                  fontSize: '14px', 
+                  fontWeight: '500', 
+                  color: '#c2410c',
+                  padding: '8px'
+                }}>{tpl.name}</div>
               </div>
             ))}
           </div>
@@ -308,6 +395,22 @@ export default function Home() {
         <ProgressIndicator currentStep={4} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-orange-600">How would you like to share?</h2>
+          
+          {/* Preview Section */}
+          {templateIdx !== null && (
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#ea580c', marginBottom: '16px' }}>Preview:</h3>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div 
+                  id="template-preview"
+                  style={{ width: "300px", height: "200px" }}
+                >
+                  {templates[templateIdx].render(name, message)}
+                </div>
+              </div>
+            </div>
+          )}
+          
           <div className="w-full max-w-md space-y-4 mb-8">
             <input
               className="w-full border-2 border-orange-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-orange-200 focus:border-orange-400 transition-all duration-200 placeholder-orange-400"
