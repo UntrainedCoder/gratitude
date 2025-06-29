@@ -21,7 +21,9 @@ const templates = [
         justifyContent: 'center',
         minWidth: '300px',
         minHeight: '200px',
-        textAlign: 'center'
+        textAlign: 'center',
+        border: '3px solid #ea580c',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '28px', 
@@ -29,13 +31,31 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.2',
           letterSpacing: '-0.02em'
-        }}>Thank You, {name}!</h2>
+        }}>Thank You, {name || 'Someone Special'}!</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your kindness and dedication make a difference every day.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '16px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '14px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '560px',
+          lineHeight: '1.1',
+          color: '#ffffff'
+        }}>
+          <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '12px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -56,7 +76,8 @@ const templates = [
         justifyContent: 'center',
         minWidth: '300px',
         minHeight: '200px',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '24px', 
@@ -64,14 +85,31 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.3',
           color: '#f97316'
-        }}>Appreciation for {name}</h2>
+        }}>Appreciation for {name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontStyle: 'italic',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your contributions and positive energy are truly valued.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -93,7 +131,8 @@ const templates = [
         minWidth: '300px',
         minHeight: '200px',
         textAlign: 'center',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '22px', 
@@ -101,13 +140,30 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.3',
           color: '#f97316'
-        }}>{name}</h2>
+        }}>{name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Thank you for being amazing and making a positive impact.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -128,7 +184,8 @@ const templates = [
         justifyContent: 'center',
         minWidth: '300px',
         minHeight: '200px',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '26px', 
@@ -137,13 +194,30 @@ const templates = [
           lineHeight: '1.2',
           color: '#ea580c',
           letterSpacing: '-0.02em'
-        }}>{name}</h2>
+        }}>{name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your presence and contributions light up our world.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -164,7 +238,9 @@ const templates = [
         minWidth: '300px',
         minHeight: '200px',
         textAlign: 'center',
-        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)'
+        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+        border: '3px solid #c2410c',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '26px', 
@@ -172,13 +248,30 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.2',
           letterSpacing: '-0.02em'
-        }}>{name}</h2>
+        }}>{name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your dedication and positive spirit inspire us all.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -199,7 +292,9 @@ const templates = [
         minWidth: '300px',
         minHeight: '200px',
         textAlign: 'center',
-        boxShadow: '0 10px 25px rgba(59, 130, 246, 0.25)'
+        boxShadow: '0 10px 25px rgba(59, 130, 246, 0.25)',
+        border: '3px solid #2563eb',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '24px', 
@@ -207,13 +302,30 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.3',
           letterSpacing: '-0.01em'
-        }}>Recognition for {name}</h2>
+        }}>Recognition for {name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your excellence and commitment deserve recognition.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -234,7 +346,8 @@ const templates = [
         justifyContent: 'center',
         minWidth: '300px',
         minHeight: '200px',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative'
       }}>
         <h2 style={{ 
           fontSize: '24px', 
@@ -242,13 +355,30 @@ const templates = [
           marginBottom: '16px',
           lineHeight: '1.3',
           color: '#10b981'
-        }}>Thank You, {name}</h2>
+        }}>Thank You, {name || 'Someone Special'}</h2>
         <p style={{ 
           fontSize: '16px',
           lineHeight: '1.6',
           fontWeight: '400',
-          maxWidth: '280px'
-        }}>{message}</p>
+          maxWidth: '280px',
+          marginBottom: '20px'
+        }}>{message || 'Your kindness and generosity make the world a better place.'}</p>
+        <div style={{
+          position: 'absolute',
+          bottom: '8px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '7px',
+          opacity: '0.8',
+          textAlign: 'center',
+          maxWidth: '280px',
+          lineHeight: '1.1'
+        }}>
+          <div style={{ marginBottom: '1px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+          <div style={{ fontSize: '6px', opacity: '0.7' }}>
+            If it touched your heart, pass it on to two special people 🌟💖
+          </div>
+        </div>
       </div>
     ),
   },
@@ -341,7 +471,8 @@ export default function Home() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          textAlign: 'center'
+          textAlign: 'center',
+          position: 'relative'
         }}>
           <h2 style={{
             fontSize: '48px',
@@ -351,17 +482,35 @@ export default function Home() {
             letterSpacing: '-0.02em',
             color: templateStyle.color || '#ffffff'
           }}>
-            {name ? `Thank You, ${name}!` : 'Thank You!'}
+            {name ? `Thank You, ${name}!` : 'Thank You, Someone Special!'}
           </h2>
           <p style={{
             fontSize: '32px',
             lineHeight: '1.6',
             fontWeight: '400',
             maxWidth: '700px',
+            color: templateStyle.color || '#ffffff',
+            marginBottom: '40px'
+          }}>
+            {message || 'Your kindness and dedication make a difference every day.'}
+          </p>
+          <div style={{
+            position: 'absolute',
+            bottom: '16px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontSize: '14px',
+            opacity: '0.8',
+            textAlign: 'center',
+            maxWidth: '560px',
+            lineHeight: '1.1',
             color: templateStyle.color || '#ffffff'
           }}>
-            {message}
-          </p>
+            <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+            <div style={{ fontSize: '12px', opacity: '0.7' }}>
+              If it touched your heart, pass it on to two special people 🌟💖
+            </div>
+          </div>
         </div>
       );
       
