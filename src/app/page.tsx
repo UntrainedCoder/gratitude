@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { createRoot } from "react-dom/client";
 
 const templates = [
   {
@@ -13,15 +14,28 @@ const templates = [
         color: '#ffffff',
         borderRadius: '12px',
         padding: '24px',
-        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         minWidth: '300px',
-        minHeight: '180px'
+        minHeight: '200px',
+        textAlign: 'center'
       }}>
-        <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '8px' }}>Thank You, {name}!</h2>
-        <p style={{ fontSize: '18px' }}>{message}</p>
+        <h2 style={{ 
+          fontSize: '28px', 
+          fontWeight: '700', 
+          marginBottom: '16px',
+          lineHeight: '1.2',
+          letterSpacing: '-0.02em'
+        }}>Thank You, {name}!</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
       </div>
     ),
   },
@@ -31,18 +45,33 @@ const templates = [
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
     render: (name: string, message: string) => (
       <div style={{ 
-        border: '2px solid #f97316', 
-        color: '#ea580c',
+        border: '3px solid #f97316', 
+        backgroundColor: '#ffffff',
+        color: '#1f2937',
         borderRadius: '12px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         minWidth: '300px',
-        minHeight: '180px'
+        minHeight: '200px',
+        textAlign: 'center'
       }}>
-        <h2 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '8px' }}>Appreciation for {name}</h2>
-        <p style={{ fontStyle: 'italic' }}>{message}</p>
+        <h2 style={{ 
+          fontSize: '24px', 
+          fontWeight: '600', 
+          marginBottom: '16px',
+          lineHeight: '1.3',
+          color: '#f97316'
+        }}>Appreciation for {name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontStyle: 'italic',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
       </div>
     ),
   },
@@ -53,18 +82,32 @@ const templates = [
     render: (name: string, message: string) => (
       <div style={{ 
         backgroundColor: '#ffffff', 
-        border: '1px solid #fed7aa', 
-        color: '#f97316',
+        border: '2px solid #e5e7eb', 
+        color: '#374151',
         borderRadius: '12px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         minWidth: '300px',
-        minHeight: '180px'
+        minHeight: '200px',
+        textAlign: 'center',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
       }}>
-        <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '8px' }}>{name}</h2>
-        <p style={{ fontSize: '16px' }}>{message}</p>
+        <h2 style={{ 
+          fontSize: '22px', 
+          fontWeight: '600', 
+          marginBottom: '16px',
+          lineHeight: '1.3',
+          color: '#f97316'
+        }}>{name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
       </div>
     ),
   },
@@ -75,18 +118,32 @@ const templates = [
     render: (name: string, message: string) => (
       <div style={{ 
         backgroundColor: '#ffedd5', 
-        color: '#c2410c', 
-        border: '2px solid #fdba74',
+        color: '#1f2937', 
+        border: '2px solid #fed7aa',
         borderRadius: '12px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         minWidth: '300px',
-        minHeight: '180px'
+        minHeight: '200px',
+        textAlign: 'center'
       }}>
-        <h2 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '8px' }}>{name}</h2>
-        <p style={{ fontSize: '18px', fontWeight: '300' }}>{message}</p>
+        <h2 style={{ 
+          fontSize: '26px', 
+          fontWeight: '800', 
+          marginBottom: '16px',
+          lineHeight: '1.2',
+          color: '#ea580c',
+          letterSpacing: '-0.02em'
+        }}>{name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
       </div>
     ),
   },
@@ -103,12 +160,95 @@ const templates = [
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         minWidth: '300px',
-        minHeight: '180px',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+        minHeight: '200px',
+        textAlign: 'center',
+        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)'
       }}>
-        <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '8px' }}>{name}</h2>
-        <p style={{ fontSize: '16px' }}>{message}</p>
+        <h2 style={{ 
+          fontSize: '26px', 
+          fontWeight: '700', 
+          marginBottom: '16px',
+          lineHeight: '1.2',
+          letterSpacing: '-0.02em'
+        }}>{name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
+      </div>
+    ),
+  },
+  {
+    id: 6,
+    name: "Professional Blue",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
+    render: (name: string, message: string) => (
+      <div style={{ 
+        backgroundColor: '#3b82f6', 
+        color: '#ffffff',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minWidth: '300px',
+        minHeight: '200px',
+        textAlign: 'center',
+        boxShadow: '0 10px 25px rgba(59, 130, 246, 0.25)'
+      }}>
+        <h2 style={{ 
+          fontSize: '24px', 
+          fontWeight: '600', 
+          marginBottom: '16px',
+          lineHeight: '1.3',
+          letterSpacing: '-0.01em'
+        }}>Recognition for {name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
+      </div>
+    ),
+  },
+  {
+    id: 7,
+    name: "Clean Green",
+    className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
+    render: (name: string, message: string) => (
+      <div style={{ 
+        backgroundColor: '#ffffff', 
+        border: '3px solid #10b981', 
+        color: '#1f2937',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minWidth: '300px',
+        minHeight: '200px',
+        textAlign: 'center'
+      }}>
+        <h2 style={{ 
+          fontSize: '24px', 
+          fontWeight: '600', 
+          marginBottom: '16px',
+          lineHeight: '1.3',
+          color: '#10b981'
+        }}>Thank You, {name}</h2>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px'
+        }}>{message}</p>
       </div>
     ),
   },
@@ -170,29 +310,90 @@ export default function Home() {
     try {
       const html2canvas = (await import("html2canvas")).default;
       
-      // Find the selected template element
-      const templateElements = document.querySelectorAll('[id="template-preview"]');
-      const selectedElement = templateElements[0];
-      
-      if (!selectedElement) {
+      if (templateIdx === null) {
         throw new Error("No template selected");
       }
       
-      const canvas = await html2canvas(selectedElement as HTMLElement, {
+      // Create a temporary container for high-resolution rendering
+      const tempDiv = document.createElement('div');
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.left = '-9999px';
+      tempDiv.style.top = '-9999px';
+      tempDiv.style.width = '800px';
+      tempDiv.style.height = '600px';
+      tempDiv.style.overflow = 'hidden';
+      document.body.appendChild(tempDiv);
+      
+      // Get the selected template
+      const template = templates[templateIdx];
+      
+      // Create a high-resolution version of the template
+      const templateStyle = template.render(name, message).props.style;
+      const highResTemplate = (
+        <div style={{
+          ...templateStyle,
+          width: '800px',
+          height: '600px',
+          padding: '48px',
+          minWidth: '800px',
+          minHeight: '600px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center'
+        }}>
+          <h2 style={{
+            fontSize: '48px',
+            fontWeight: '700',
+            marginBottom: '32px',
+            lineHeight: '1.2',
+            letterSpacing: '-0.02em',
+            color: templateStyle.color || '#ffffff'
+          }}>
+            {name ? `Thank You, ${name}!` : 'Thank You!'}
+          </h2>
+          <p style={{
+            fontSize: '32px',
+            lineHeight: '1.6',
+            fontWeight: '400',
+            maxWidth: '700px',
+            color: templateStyle.color || '#ffffff'
+          }}>
+            {message}
+          </p>
+        </div>
+      );
+      
+      // Render the high-resolution template
+      const root = createRoot(tempDiv);
+      root.render(highResTemplate);
+      
+      // Wait for rendering to complete
+      await new Promise(resolve => setTimeout(resolve, 200));
+      
+      // Capture the high-resolution image
+      const canvas = await html2canvas(tempDiv, {
         allowTaint: true,
-        useCORS: true
+        useCORS: true,
+        width: 800,
+        height: 600,
+        logging: false
       });
       
-      const url = canvas.toDataURL("image/png");
+      const url = canvas.toDataURL("image/png", 1.0);
       setDownloadUrl(url);
       
-      // Trigger download automatically
+      // Trigger download
       const link = document.createElement('a');
       link.download = `appreciation-for-${name}.png`;
       link.href = url;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      
+      // Clean up
+      document.body.removeChild(tempDiv);
       
     } catch (error) {
       console.error('Download error:', error);
@@ -233,14 +434,14 @@ export default function Home() {
     return (
       <div className="min-h-screen flex flex-col bg-white text-orange-700">
         <section className="flex flex-col items-center justify-center flex-1 text-center py-12 px-4 sm:py-24 animate-in">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6 text-orange-600 max-w-2xl leading-tight">
+          <h1 className="text-heading mb-6 text-orange-600 max-w-2xl leading-tight">
             How did you feel when you were last recognized?
           </h1>
-          <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-xl text-orange-500 leading-relaxed">
+          <p className="text-body mb-8 max-w-xl text-orange-500 leading-relaxed">
             Recognizing others boosts morale, builds trust, and creates a positive culture. Start appreciating someone today!
           </p>
           <button
-            className="bg-orange-500 text-white px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300"
+            className="btn-primary"
             onClick={() => handleStepChange(1)}
           >
             Start Appreciating
@@ -260,10 +461,10 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={1} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-orange-600">Who are you recognizing?</h2>
+          <h2 className="text-heading mb-6 text-orange-600">Who are you recognizing?</h2>
           <div className="w-full max-w-md">
             <input
-              className="w-full border-2 border-orange-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-orange-200 focus:border-orange-400 transition-all duration-200 placeholder-orange-400"
+              className="form-input"
               placeholder="Enter their name"
               value={name}
               onChange={e => setName(e.target.value)}
@@ -272,13 +473,13 @@ export default function Home() {
           </div>
           <div className="flex gap-4 mt-8">
             <button
-              className="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
+              className="btn-secondary"
               onClick={() => handleStepChange(0)}
             >
               Back
             </button>
             <button
-              className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => handleStepChange(2)}
               disabled={!name.trim()}
             >
@@ -296,10 +497,10 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={2} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-orange-600">What would you like to say?</h2>
+          <h2 className="text-heading mb-6 text-orange-600">What would you like to say?</h2>
           <div className="w-full max-w-md">
             <textarea
-              className="w-full border-2 border-orange-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-orange-200 focus:border-orange-400 transition-all duration-200 placeholder-orange-400 resize-none"
+              className="form-input resize-none"
               placeholder="Write your appreciation message"
               value={message}
               onChange={e => setMessage(e.target.value)}
@@ -312,13 +513,13 @@ export default function Home() {
           </div>
           <div className="flex gap-4 mt-8">
             <button
-              className="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
+              className="btn-secondary"
               onClick={() => handleStepChange(1)}
             >
               Back
             </button>
             <button
-              className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => handleStepChange(3)}
               disabled={!message.trim()}
             >
@@ -336,20 +537,12 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={3} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-orange-600">Choose a template</h2>
+          <h2 className="text-heading mb-6 text-orange-600">Choose a template</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 max-w-4xl">
             {templates.map((tpl, idx) => (
               <div
                 key={tpl.id}
-                style={{
-                  cursor: 'pointer',
-                  border: templateIdx === idx ? '2px solid #ea580c' : '2px solid transparent',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  transform: templateIdx === idx ? 'scale(1.05)' : 'scale(1)',
-                  transition: 'all 0.3s',
-                  boxShadow: templateIdx === idx ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
-                }}
+                className={`template-option ${templateIdx === idx ? 'selected' : ''}`}
                 onClick={() => setTemplateIdx(idx)}
               >
                 <div 
@@ -358,25 +551,19 @@ export default function Home() {
                 >
                   {tpl.render(name, message)}
                 </div>
-                <div style={{ 
-                  marginTop: '8px', 
-                  fontSize: '14px', 
-                  fontWeight: '500', 
-                  color: '#c2410c',
-                  padding: '8px'
-                }}>{tpl.name}</div>
+                <div className="text-subheading text-orange-600 p-2">{tpl.name}</div>
               </div>
             ))}
           </div>
           <div className="flex gap-4">
             <button
-              className="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
+              className="btn-secondary"
               onClick={() => handleStepChange(2)}
             >
               Back
             </button>
             <button
-              className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => handleStepChange(4)}
               disabled={templateIdx === null}
             >
@@ -394,16 +581,22 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={4} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-orange-600">How would you like to share?</h2>
+          <h2 className="text-heading mb-6 text-orange-600">How would you like to share?</h2>
           
           {/* Preview Section */}
           {templateIdx !== null && (
-            <div style={{ marginBottom: '32px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#ea580c', marginBottom: '16px' }}>Preview:</h3>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="mb-8">
+              <h3 className="text-subheading text-orange-600 mb-4">Preview (Final image will be high-resolution):</h3>
+              <div className="flex justify-center">
                 <div 
                   id="template-preview"
-                  style={{ width: "300px", height: "200px" }}
+                  style={{ 
+                    width: "400px", 
+                    height: "300px",
+                    transform: "scale(1)",
+                    transformOrigin: "center"
+                  }}
+                  className="border-2 border-orange-200 rounded-lg overflow-hidden"
                 >
                   {templates[templateIdx].render(name, message)}
                 </div>
@@ -413,7 +606,7 @@ export default function Home() {
           
           <div className="w-full max-w-md space-y-4 mb-8">
             <input
-              className="w-full border-2 border-orange-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-orange-200 focus:border-orange-400 transition-all duration-200 placeholder-orange-400"
+              className="form-input"
               placeholder="Recipient's email"
               value={recipientEmail}
               onChange={e => setRecipientEmail(e.target.value)}
@@ -430,7 +623,7 @@ export default function Home() {
             </label>
             {copyMe && (
               <input
-                className="w-full border-2 border-orange-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-4 focus:ring-orange-200 focus:border-orange-400 transition-all duration-200 placeholder-orange-400"
+                className="form-input"
                 placeholder="Your email"
                 value={userEmail}
                 onChange={e => setUserEmail(e.target.value)}
@@ -440,14 +633,14 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={handleSend}
               disabled={!recipientEmail || (copyMe && !userEmail) || sending}
             >
               {sending ? <LoadingSpinner message="Sending..." /> : "Send Email"}
             </button>
             <button
-              className="bg-white border-2 border-orange-500 text-orange-600 px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-50 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="btn-secondary"
               onClick={handleDownload}
               disabled={isDownloading}
             >
@@ -459,7 +652,7 @@ export default function Home() {
               <a
                 href={downloadUrl}
                 download={`appreciation-for-${name}.png`}
-                className="bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="btn-primary"
               >
                 Click to Download
               </a>
@@ -472,7 +665,7 @@ export default function Home() {
           )}
           <div className="mt-8">
             <button
-              className="bg-gray-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
+              className="btn-secondary"
               onClick={() => handleStepChange(3)}
             >
               Back
@@ -495,11 +688,11 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-orange-600">Thank you for spreading appreciation!</h2>
-            <p className="mb-8 text-orange-500 text-lg">Your message has been sent/downloaded. You just made someone&apos;s day brighter.</p>
+            <h2 className="text-heading mb-4 text-orange-600">Thank you for spreading appreciation!</h2>
+            <p className="mb-8 text-body text-orange-500">Your message has been sent/downloaded. You just made someone&apos;s day brighter.</p>
           </div>
           <button
-            className="bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-300"
+            className="btn-primary"
             onClick={() => {
               setStep(1);
               setName("");
