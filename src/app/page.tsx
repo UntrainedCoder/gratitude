@@ -95,17 +95,6 @@ const LoadingSpinner = ({ message }: { message: string }) => {
   );
 };
 
-// Skeleton loader component
-const SkeletonLoader = () => {
-  return (
-    <div className="animate-pulse">
-      <div className="h-8 bg-orange-200 rounded mb-4 w-3/4 mx-auto"></div>
-      <div className="h-4 bg-orange-200 rounded mb-2 w-1/2 mx-auto"></div>
-      <div className="h-4 bg-orange-200 rounded w-2/3 mx-auto"></div>
-    </div>
-  );
-};
-
 export default function Home() {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
@@ -117,12 +106,10 @@ export default function Home() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
 
   // Animation states
   const [animateIn, setAnimateIn] = useState(true);
-  const [animateOut, setAnimateOut] = useState(false);
 
   useEffect(() => {
     // Simple entrance animation for all steps
@@ -148,7 +135,7 @@ export default function Home() {
       const canvas = await html2canvas(el);
       const url = canvas.toDataURL("image/png");
       setDownloadUrl(url);
-    } catch (err) {
+    } catch {
       setError("Failed to generate image. Please try again.");
     } finally {
       setIsDownloading(false);
