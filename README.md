@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## AI Message Enhancement
+
+This app includes an AI-powered message enhancement feature that can make your appreciation messages more heartfelt and detailed.
+
+### Setup (Optional)
+
+To enable AI enhancement:
+
+1. Sign up for a free account at [Hugging Face](https://huggingface.co)
+2. Go to Settings → Access Tokens
+3. Create a new token (starts with `hf_`)
+4. Create a `.env.local` file in the project root
+5. Add your token: `HF_API_TOKEN=your_token_here`
+
+### How it Works
+
+- Check the "✨ Enhance message with AI" checkbox when writing your message
+- The app will automatically enhance your message using AI
+- If no API token is provided, it uses simple text enhancement
+- Enhanced messages are more detailed and heartfelt while keeping your original meaning
+
+### Features
+
+- **Free tier**: 30,000 requests per month
+- **Fallback**: Works without API token using simple enhancement
+- **Privacy**: No user data stored, completely anonymous
+- **Real-time**: See enhancement status and preview

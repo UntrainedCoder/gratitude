@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { createRoot } from "react-dom/client";
 
@@ -482,9 +482,62 @@ export default function Home() {
   const [templateIdx, setTemplateIdx] = useState<number | null>(null);
   const [error, setError] = useState("");
   const [isDownloading, setIsDownloading] = useState(false);
+  const [enhanceWithAI, setEnhanceWithAI] = useState(false);
+  const [isEnhancing, setIsEnhancing] = useState(false);
+  const [enhancedMessage, setEnhancedMessage] = useState("");
+  const [originalMessage, setOriginalMessage] = useState("");
+  const [isUsingEnhanced, setIsUsingEnhanced] = useState(false);
 
   const handleStepChange = (newStep: number) => {
     setStep(newStep);
+  };
+
+  // AI Enhancement function
+  const enhanceMessageWithAI = async (originalMessage: string) => {
+    if (!originalMessage.trim()) return;
+    
+    setIsEnhancing(true);
+    setOriginalMessage(originalMessage); // Store original message
+    
+    try {
+      const response = await fetch('/api/enhanceMessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: originalMessage }),
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setEnhancedMessage(data.enhancedMessage);
+        // Update the textarea with enhanced message
+        setMessage(data.enhancedMessage);
+        setIsUsingEnhanced(true);
+      } else {
+        console.error('Failed to enhance message');
+        setEnhancedMessage(originalMessage);
+      }
+    } catch (error) {
+      console.error('Error enhancing message:', error);
+      setEnhancedMessage(originalMessage);
+    } finally {
+      setIsEnhancing(false);
+    }
+  };
+
+  // Effect to trigger AI enhancement when checkbox is checked
+  useEffect(() => {
+    if (enhanceWithAI && message.trim() && !isEnhancing && !isUsingEnhanced) {
+      enhanceMessageWithAI(message);
+    }
+  }, [enhanceWithAI, message]);
+
+  // Function to revert to original message
+  const revertToOriginal = () => {
+    setMessage(originalMessage);
+    setIsUsingEnhanced(false);
+    setEnhancedMessage("");
   };
 
   // For image download
@@ -1239,6 +1292,53 @@ export default function Home() {
             <div className="text-right mt-2 text-sm text-orange-500">
               {message.length}/500 characters
             </div>
+            
+            {/* AI Enhancement Checkbox */}
+            <div className="mt-4 flex items-center justify-center">
+                          <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                className="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 rounded focus:ring-orange-500 focus:ring-2"
+                checked={enhanceWithAI}
+                onChange={(e) => {
+                  setEnhanceWithAI(e.target.checked);
+                  if (!e.target.checked && isUsingEnhanced) {
+                    revertToOriginal();
+                  }
+                }}
+              />
+              <span className="text-sm text-gray-700">
+                ✨ Enhance message with AI
+              </span>
+            </label>
+            </div>
+            
+            {/* AI Enhancement Status */}
+            {enhanceWithAI && message.trim() && (
+              <div className="mt-3 p-3 bg-orange-50 border border-orange-200 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-orange-700">
+                    {isEnhancing ? "Enhancing message..." : (isUsingEnhanced ? "✨ Enhanced message active" : "Message will be enhanced with AI")}
+                  </span>
+                  {isEnhancing && (
+                    <div className="w-4 h-4 border-2 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
+                  )}
+                </div>
+                {!isEnhancing && isUsingEnhanced && (
+                  <div className="mt-2 flex items-center justify-between">
+                    <span className="text-xs text-orange-600">
+                      ✨ Enhanced version is now in the textarea
+                    </span>
+                    <button
+                      onClick={revertToOriginal}
+                      className="text-xs text-orange-600 hover:text-orange-800 underline"
+                    >
+                      Revert to original
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           <div className="flex gap-4 mt-8">
             <button
@@ -1385,6 +1485,11 @@ export default function Home() {
               setMessage("");
               setTemplateIdx(null);
               setError("");
+              setEnhanceWithAI(false);
+              setIsEnhancing(false);
+              setEnhancedMessage("");
+              setOriginalMessage("");
+              setIsUsingEnhanced(false);
             }}
           >
             Recognize Someone Else
