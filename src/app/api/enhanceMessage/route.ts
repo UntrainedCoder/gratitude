@@ -9,12 +9,14 @@ export async function POST(req: NextRequest) {
 
     const HF_API_TOKEN = process.env.HF_API_TOKEN;
     
-    // Debug logging
-    console.log("Environment variables:", {
-      HF_API_TOKEN: HF_API_TOKEN ? "Present" : "Missing",
-      tokenLength: HF_API_TOKEN?.length || 0,
-      allEnvVars: Object.keys(process.env).filter(key => key.includes('HF'))
-    });
+    // Enhanced debug logging
+    console.log("=== ENVIRONMENT DEBUG ===");
+    console.log("HF_API_TOKEN:", HF_API_TOKEN ? "Present" : "Missing");
+    console.log("Token length:", HF_API_TOKEN?.length || 0);
+    console.log("All env vars with 'HF':", Object.keys(process.env).filter(key => key.includes('HF')));
+    console.log("All env vars:", Object.keys(process.env).slice(0, 10)); // First 10 env vars
+    console.log("NODE_ENV:", process.env.NODE_ENV);
+    console.log("=========================");
     
     if (!HF_API_TOKEN) {
       // Fallback to simple enhancement if no API token
