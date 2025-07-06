@@ -484,7 +484,6 @@ export default function Home() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [enhanceWithAI, setEnhanceWithAI] = useState(false);
   const [isEnhancing, setIsEnhancing] = useState(false);
-  const [enhancedMessage, setEnhancedMessage] = useState("");
   const [originalMessage, setOriginalMessage] = useState("");
   const [isUsingEnhanced, setIsUsingEnhanced] = useState(false);
 
@@ -510,17 +509,14 @@ export default function Home() {
       
       if (response.ok) {
         const data = await response.json();
-        setEnhancedMessage(data.enhancedMessage);
         // Update the textarea with enhanced message
         setMessage(data.enhancedMessage);
         setIsUsingEnhanced(true);
       } else {
         console.error('Failed to enhance message');
-        setEnhancedMessage(originalMessage);
       }
     } catch (error) {
       console.error('Error enhancing message:', error);
-      setEnhancedMessage(originalMessage);
     } finally {
       setIsEnhancing(false);
     }
@@ -531,13 +527,12 @@ export default function Home() {
     if (enhanceWithAI && message.trim() && !isEnhancing && !isUsingEnhanced) {
       enhanceMessageWithAI(message);
     }
-  }, [enhanceWithAI, message]);
+  }, [enhanceWithAI, message, isEnhancing, isUsingEnhanced]);
 
   // Function to revert to original message
   const revertToOriginal = () => {
     setMessage(originalMessage);
     setIsUsingEnhanced(false);
-    setEnhancedMessage("");
   };
 
   // For image download
@@ -1487,7 +1482,6 @@ export default function Home() {
               setError("");
               setEnhanceWithAI(false);
               setIsEnhancing(false);
-              setEnhancedMessage("");
               setOriginalMessage("");
               setIsUsingEnhanced(false);
             }}
