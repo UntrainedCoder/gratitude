@@ -1093,7 +1093,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto text-orange-500 leading-relaxed">
-              Create beautiful, personalized appreciation cards that brighten someone's day and strengthen relationships.
+              Create beautiful, personalized appreciation cards that brighten someone&apos;s day and strengthen relationships.
             </p>
             
             {/* Feature Icons */}
