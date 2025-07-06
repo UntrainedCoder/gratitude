@@ -481,7 +481,6 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [templateIdx, setTemplateIdx] = useState<number | null>(null);
   const [error, setError] = useState("");
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleStepChange = (newStep: number) => {
@@ -491,7 +490,6 @@ export default function Home() {
   // For image download
   const handleDownload = async () => {
     setError("");
-    setDownloadUrl(null);
     setIsDownloading(true);
     
     try {
@@ -511,8 +509,7 @@ export default function Home() {
       tempDiv.style.overflow = 'hidden';
       document.body.appendChild(tempDiv);
       
-      // Get the selected template
-      const template = templates[templateIdx];
+
       
       // Create a high-resolution version of the template based on template ID
       let highResTemplate;
@@ -1007,7 +1004,6 @@ export default function Home() {
       });
       
       const url = canvas.toDataURL("image/png", 1.0);
-      setDownloadUrl(url);
       
       // Trigger download
       const link = document.createElement('a');
@@ -1065,7 +1061,7 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={1} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
-          <h2 className="text-heading mb-6 text-orange-600">What's your name?</h2>
+          <h2 className="text-heading mb-6 text-orange-600">What&apos;s your name?</h2>
           <div className="w-full max-w-md">
             <input
               className="form-input"
@@ -1295,7 +1291,6 @@ export default function Home() {
               setName("");
               setMessage("");
               setTemplateIdx(null);
-              setDownloadUrl(null);
               setError("");
             }}
           >
