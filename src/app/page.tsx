@@ -8,7 +8,7 @@ const templates = [
     id: 1,
     name: "Classic Orange",
     className: "rounded-xl p-6 shadow-lg flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         backgroundColor: '#f97316', 
         color: '#ffffff',
@@ -37,8 +37,16 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your kindness and dedication make a difference every day.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '16px',
@@ -63,7 +71,7 @@ const templates = [
     id: 2,
     name: "Elegant Border",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         border: '3px solid #f97316', 
         backgroundColor: '#ffffff',
@@ -92,8 +100,17 @@ const templates = [
           fontStyle: 'italic',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your contributions and positive energy are truly valued.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic',
+          color: '#f97316'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -117,7 +134,7 @@ const templates = [
     id: 3,
     name: "Minimalist Card",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         backgroundColor: '#ffffff', 
         border: '2px solid #e5e7eb', 
@@ -146,8 +163,17 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Thank you for being amazing and making a positive impact.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic',
+          color: '#f97316'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -171,7 +197,7 @@ const templates = [
     id: 4,
     name: "Bold Header",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         backgroundColor: '#ffedd5', 
         color: '#1f2937', 
@@ -200,8 +226,17 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your presence and contributions light up our world.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic',
+          color: '#ea580c'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -225,7 +260,7 @@ const templates = [
     id: 5,
     name: "Modern Block",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         background: 'linear-gradient(135deg, #fb923c, #ea580c)', 
         color: '#ffffff',
@@ -254,8 +289,16 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your dedication and positive spirit inspire us all.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -279,7 +322,7 @@ const templates = [
     id: 6,
     name: "Professional Blue",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         backgroundColor: '#3b82f6', 
         color: '#ffffff',
@@ -308,8 +351,16 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your excellence and commitment deserve recognition.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -333,7 +384,7 @@ const templates = [
     id: 7,
     name: "Clean Green",
     className: "rounded-xl p-6 flex flex-col items-center min-w-[300px] min-h-[180px] transform transition-all duration-300 hover:scale-105 hover:shadow-lg",
-    render: (name: string, message: string) => (
+    render: (name: string, message: string, senderName: string) => (
       <div style={{ 
         backgroundColor: '#ffffff', 
         border: '3px solid #10b981', 
@@ -361,8 +412,17 @@ const templates = [
           lineHeight: '1.6',
           fontWeight: '400',
           maxWidth: '280px',
-          marginBottom: '20px'
+          marginBottom: '12px'
         }}>{message || 'Your kindness and generosity make the world a better place.'}</p>
+        <p style={{ 
+          fontSize: '16px',
+          lineHeight: '1.6',
+          fontWeight: '400',
+          maxWidth: '280px',
+          marginBottom: '20px',
+          fontStyle: 'italic',
+          color: '#10b981'
+        }}>- {senderName || 'Someone who cares'}</p>
         <div style={{
           position: 'absolute',
           bottom: '8px',
@@ -416,13 +476,10 @@ const LoadingSpinner = ({ message }: { message: string }) => {
 
 export default function Home() {
   const [step, setStep] = useState(0);
+  const [senderName, setSenderName] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [templateIdx, setTemplateIdx] = useState<number | null>(null);
-  const [recipientEmail, setRecipientEmail] = useState("");
-  const [copyMe, setCopyMe] = useState(false);
-  const [userEmail, setUserEmail] = useState("");
-  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -457,62 +514,481 @@ export default function Home() {
       // Get the selected template
       const template = templates[templateIdx];
       
-      // Create a high-resolution version of the template
-      const templateStyle = template.render(name, message).props.style;
-      const highResTemplate = (
-        <div style={{
-          ...templateStyle,
-          width: '800px',
-          height: '600px',
-          padding: '48px',
-          minWidth: '800px',
-          minHeight: '600px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          position: 'relative'
-        }}>
-          <h2 style={{
-            fontSize: '48px',
-            fontWeight: '700',
-            marginBottom: '32px',
-            lineHeight: '1.2',
-            letterSpacing: '-0.02em',
-            color: templateStyle.color || '#ffffff'
-          }}>
-            {name ? `Thank You, ${name}!` : 'Thank You, Someone Special!'}
-          </h2>
-          <p style={{
-            fontSize: '32px',
-            lineHeight: '1.6',
-            fontWeight: '400',
-            maxWidth: '700px',
-            color: templateStyle.color || '#ffffff',
-            marginBottom: '40px'
-          }}>
-            {message || 'Your kindness and dedication make a difference every day.'}
-          </p>
+      // Create a high-resolution version of the template based on template ID
+      let highResTemplate;
+      
+      if (templateIdx === 0) { // Classic Orange
+        highResTemplate = (
           <div style={{
-            position: 'absolute',
-            bottom: '16px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            fontSize: '14px',
-            opacity: '0.8',
+            backgroundColor: '#f97316',
+            color: '#ffffff',
+            borderRadius: '24px',
+            padding: '48px',
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.15)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
             textAlign: 'center',
-            maxWidth: '560px',
-            lineHeight: '1.1',
-            color: templateStyle.color || '#ffffff'
+            border: '6px solid #ea580c',
+            position: 'relative'
           }}>
-            <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
-            <div style={{ fontSize: '12px', opacity: '0.7' }}>
-              If it touched your heart, pass it on to two special people 🌟💖
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: '700',
+              marginBottom: '32px',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              color: '#ffffff'
+            }}>
+              {name ? `Thank You, ${name}!` : 'Thank You, Someone Special!'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your kindness and dedication make a difference every day.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '32px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#ffffff'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      } else if (templateIdx === 1) { // Elegant Border
+        highResTemplate = (
+          <div style={{
+            border: '6px solid #f97316',
+            backgroundColor: '#ffffff',
+            color: '#1f2937',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: '600',
+              marginBottom: '32px',
+              lineHeight: '1.3',
+              color: '#f97316'
+            }}>
+              Appreciation for {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontStyle: 'italic',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#1f2937',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your contributions and positive energy are truly valued.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#f97316',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#1f2937'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      } else if (templateIdx === 2) { // Minimalist Card
+        highResTemplate = (
+          <div style={{
+            backgroundColor: '#ffffff',
+            border: '4px solid #e5e7eb',
+            color: '#374151',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            boxShadow: '0 8px 12px rgba(0, 0, 0, 0.05)',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '44px',
+              fontWeight: '600',
+              marginBottom: '32px',
+              lineHeight: '1.3',
+              color: '#f97316'
+            }}>
+              {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#374151',
+              marginBottom: '24px'
+            }}>
+              {message || 'Thank you for being amazing and making a positive impact.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#f97316',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#374151'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      } else if (templateIdx === 3) { // Bold Header
+        highResTemplate = (
+          <div style={{
+            backgroundColor: '#ffedd5',
+            color: '#1f2937',
+            border: '4px solid #fed7aa',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '52px',
+              fontWeight: '800',
+              marginBottom: '32px',
+              lineHeight: '1.2',
+              color: '#ea580c',
+              letterSpacing: '-0.02em'
+            }}>
+              {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#1f2937',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your presence and contributions light up our world.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ea580c',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#1f2937'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      } else if (templateIdx === 4) { // Modern Block
+        highResTemplate = (
+          <div style={{
+            background: 'linear-gradient(135deg, #fb923c, #ea580c)',
+            color: '#ffffff',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            boxShadow: '0 40px 80px rgba(0, 0, 0, 0.15)',
+            border: '6px solid #c2410c',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '52px',
+              fontWeight: '700',
+              marginBottom: '32px',
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              color: '#ffffff'
+            }}>
+              {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your dedication and positive spirit inspire us all.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#ffffff'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      } else if (templateIdx === 5) { // Professional Blue
+        highResTemplate = (
+          <div style={{
+            backgroundColor: '#3b82f6',
+            color: '#ffffff',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            boxShadow: '0 20px 50px rgba(59, 130, 246, 0.25)',
+            border: '6px solid #2563eb',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: '600',
+              marginBottom: '32px',
+              lineHeight: '1.3',
+              letterSpacing: '-0.01em',
+              color: '#ffffff'
+            }}>
+              Recognition for {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your excellence and commitment deserve recognition.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#ffffff',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#ffffff'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      } else if (templateIdx === 6) { // Clean Green
+        highResTemplate = (
+          <div style={{
+            backgroundColor: '#ffffff',
+            border: '6px solid #10b981',
+            color: '#1f2937',
+            borderRadius: '24px',
+            padding: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '800px',
+            height: '600px',
+            textAlign: 'center',
+            position: 'relative'
+          }}>
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: '600',
+              marginBottom: '32px',
+              lineHeight: '1.3',
+              color: '#10b981'
+            }}>
+              Thank You, {name || 'Someone Special'}
+            </h2>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#1f2937',
+              marginBottom: '24px'
+            }}>
+              {message || 'Your kindness and generosity make the world a better place.'}
+            </p>
+            <p style={{
+              fontSize: '32px',
+              lineHeight: '1.6',
+              fontWeight: '400',
+              maxWidth: '700px',
+              color: '#10b981',
+              marginBottom: '40px',
+              fontStyle: 'italic'
+            }}>
+              - {senderName || 'Someone who cares'}
+            </p>
+            <div style={{
+              position: 'absolute',
+              bottom: '16px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '14px',
+              opacity: '0.8',
+              textAlign: 'center',
+              maxWidth: '560px',
+              lineHeight: '1.1',
+              color: '#1f2937'
+            }}>
+              <div style={{ marginBottom: '2px' }}>Sent from Gratitude.TechPremi.com to brighten your day!</div>
+              <div style={{ fontSize: '12px', opacity: '0.7' }}>
+                If it touched your heart, pass it on to two special people 🌟💖
+              </div>
+            </div>
+          </div>
+        );
+      }
       
       // Render the high-resolution template
       const root = createRoot(tempDiv);
@@ -544,6 +1020,9 @@ export default function Home() {
       // Clean up
       document.body.removeChild(tempDiv);
       
+      // Go to thank you step
+      handleStepChange(5);
+      
     } catch (error) {
       console.error('Download error:', error);
       setError("Failed to generate image. Please try again.");
@@ -552,31 +1031,7 @@ export default function Home() {
     }
   };
 
-  // For sending email
-  const handleSend = async () => {
-    setSending(true);
-    setError("");
-    try {
-      const res = await fetch("/api/sendAppreciation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          message,
-          templateIdx,
-          recipientEmail,
-          copyMe,
-          userEmail,
-        }),
-      });
-      if (!res.ok) throw new Error("Failed to send email");
-      handleStepChange(5);
-    } catch {
-      setError("Failed to send email. Please try again.");
-    } finally {
-      setSending(false);
-    }
-  };
+
 
   // Hero Section
   if (step === 0) {
@@ -604,11 +1059,47 @@ export default function Home() {
     );
   }
 
-  // Step 1: Name
+  // Step 1: Sender Name
   if (step === 1) {
     return (
       <div className="min-h-screen bg-white">
         <ProgressIndicator currentStep={1} totalSteps={5} />
+        <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
+          <h2 className="text-heading mb-6 text-orange-600">What's your name?</h2>
+          <div className="w-full max-w-md">
+            <input
+              className="form-input"
+              placeholder="Enter your name"
+              value={senderName}
+              onChange={e => setSenderName(e.target.value)}
+              autoFocus
+            />
+          </div>
+          <div className="flex gap-4 mt-8">
+            <button
+              className="btn-secondary"
+              onClick={() => handleStepChange(0)}
+            >
+              Back
+            </button>
+            <button
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={() => handleStepChange(2)}
+              disabled={!senderName.trim()}
+            >
+              Next
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Step 2: Recipient Name
+  if (step === 2) {
+    return (
+      <div className="min-h-screen bg-white">
+        <ProgressIndicator currentStep={2} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
           <h2 className="text-heading mb-6 text-orange-600">Who are you recognizing?</h2>
           <div className="w-full max-w-md">
@@ -623,13 +1114,13 @@ export default function Home() {
           <div className="flex gap-4 mt-8">
             <button
               className="btn-secondary"
-              onClick={() => handleStepChange(0)}
+              onClick={() => handleStepChange(1)}
             >
               Back
             </button>
             <button
               className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => handleStepChange(2)}
+              onClick={() => handleStepChange(3)}
               disabled={!name.trim()}
             >
               Next
@@ -640,11 +1131,11 @@ export default function Home() {
     );
   }
 
-  // Step 2: Message
-  if (step === 2) {
+  // Step 3: Message
+  if (step === 3) {
     return (
       <div className="min-h-screen bg-white">
-        <ProgressIndicator currentStep={2} totalSteps={5} />
+        <ProgressIndicator currentStep={3} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
           <h2 className="text-heading mb-6 text-orange-600">What would you like to say?</h2>
           <div className="w-full max-w-md">
@@ -663,13 +1154,13 @@ export default function Home() {
           <div className="flex gap-4 mt-8">
             <button
               className="btn-secondary"
-              onClick={() => handleStepChange(1)}
+              onClick={() => handleStepChange(2)}
             >
               Back
             </button>
             <button
               className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => handleStepChange(3)}
+              onClick={() => handleStepChange(4)}
               disabled={!message.trim()}
             >
               Next
@@ -680,11 +1171,11 @@ export default function Home() {
     );
   }
 
-  // Step 3: Template Selection
-  if (step === 3) {
+  // Step 4: Template Selection
+  if (step === 4) {
     return (
       <div className="min-h-screen bg-white">
-        <ProgressIndicator currentStep={3} totalSteps={5} />
+        <ProgressIndicator currentStep={4} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
           <h2 className="text-heading mb-6 text-orange-600">Choose a template</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 max-w-4xl">
@@ -698,7 +1189,7 @@ export default function Home() {
                   id={templateIdx === idx ? "template-preview" : `template-${idx}`} 
                   style={{ width: "100%", height: 200 }}
                 >
-                  {tpl.render(name, message)}
+                  {tpl.render(name, message, senderName)}
                 </div>
                 <div className="text-subheading text-orange-600 p-2">{tpl.name}</div>
               </div>
@@ -707,13 +1198,13 @@ export default function Home() {
           <div className="flex gap-4">
             <button
               className="btn-secondary"
-              onClick={() => handleStepChange(2)}
+              onClick={() => handleStepChange(3)}
             >
               Back
             </button>
             <button
               className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={() => handleStepChange(4)}
+              onClick={() => handleStepChange(5)}
               disabled={templateIdx === null}
             >
               Next
@@ -724,11 +1215,11 @@ export default function Home() {
     );
   }
 
-  // Step 4: Email/Download
-  if (step === 4) {
+  // Step 5: Email/Download
+  if (step === 5) {
     return (
       <div className="min-h-screen bg-white">
-        <ProgressIndicator currentStep={4} totalSteps={5} />
+        <ProgressIndicator currentStep={5} totalSteps={5} />
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-12 px-4 animate-in">
           <h2 className="text-heading mb-6 text-orange-600">How would you like to share?</h2>
           
@@ -747,66 +1238,22 @@ export default function Home() {
                   }}
                   className="border-2 border-orange-200 rounded-lg overflow-hidden"
                 >
-                  {templates[templateIdx].render(name, message)}
+                  {templates[templateIdx].render(name, message, senderName)}
                 </div>
               </div>
             </div>
           )}
           
-          <div className="w-full max-w-md space-y-4 mb-8">
-            <input
-              className="form-input"
-              placeholder="Recipient's email"
-              value={recipientEmail}
-              onChange={e => setRecipientEmail(e.target.value)}
-              type="email"
-            />
-            <label className="flex items-center gap-3 text-orange-700 cursor-pointer hover:text-orange-600 transition-colors duration-200">
-              <input
-                type="checkbox"
-                checked={copyMe}
-                onChange={e => setCopyMe(e.target.checked)}
-                className="w-4 h-4 text-orange-600 border-orange-300 rounded focus:ring-orange-500"
-              />
-              Copy me on this email
-            </label>
-            {copyMe && (
-              <input
-                className="form-input"
-                placeholder="Your email"
-                value={userEmail}
-                onChange={e => setUserEmail(e.target.value)}
-                type="email"
-              />
-            )}
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={handleSend}
-              disabled={!recipientEmail || (copyMe && !userEmail) || sending}
-            >
-              {sending ? <LoadingSpinner message="Sending..." /> : "Send Email"}
-            </button>
-            <button
-              className="btn-secondary"
+              className="btn-primary"
               onClick={handleDownload}
               disabled={isDownloading}
             >
               {isDownloading ? <LoadingSpinner message="Generating..." /> : "Download as Image"}
             </button>
           </div>
-          {downloadUrl && (
-            <div className="mt-6 flex flex-col items-center slide-in-from-bottom-4">
-              <a
-                href={downloadUrl}
-                download={`appreciation-for-${name}.png`}
-                className="btn-primary"
-              >
-                Click to Download
-              </a>
-            </div>
-          )}
+
           {error && (
             <div className="text-red-500 mt-4 p-3 bg-red-50 rounded-lg border border-red-200 slide-in-from-bottom-4">
               {error}
@@ -815,7 +1262,7 @@ export default function Home() {
           <div className="mt-8">
             <button
               className="btn-secondary"
-              onClick={() => handleStepChange(3)}
+              onClick={() => handleStepChange(4)}
             >
               Back
             </button>
@@ -844,12 +1291,10 @@ export default function Home() {
             className="btn-primary"
             onClick={() => {
               setStep(1);
+              setSenderName("");
               setName("");
               setMessage("");
               setTemplateIdx(null);
-              setRecipientEmail("");
-              setCopyMe(false);
-              setUserEmail("");
               setDownloadUrl(null);
               setError("");
             }}
