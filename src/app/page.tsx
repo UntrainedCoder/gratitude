@@ -1027,27 +1027,120 @@ export default function Home() {
     }
   };
 
-
-
   // Hero Section
   if (step === 0) {
     return (
-      <div className="min-h-screen flex flex-col bg-white text-orange-700">
-        <section className="flex flex-col items-center justify-center flex-1 text-center py-12 px-4 sm:py-24 animate-in">
-          <h1 className="text-heading mb-6 text-orange-600 max-w-2xl leading-tight">
-            How did you feel when you were last recognized?
-          </h1>
-          <p className="text-body mb-8 max-w-xl text-orange-500 leading-relaxed">
-            Recognizing others boosts morale, builds trust, and creates a positive culture. Start appreciating someone today!
-          </p>
-          <button
-            className="btn-primary"
-            onClick={() => handleStepChange(1)}
-          >
-            Start Appreciating
-          </button>
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-orange-50 via-white to-orange-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-orange-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-orange-200 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-orange-100 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-orange-300 rounded-full blur-2xl"></div>
+        </div>
+        
+        {/* Geometric Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#f97316" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <section className="flex flex-col items-center justify-center flex-1 text-center py-12 px-4 sm:py-24 animate-in relative z-10">
+          {/* Hero Illustration */}
+          <div className="mb-8 relative">
+            <div className="relative w-48 h-48 mx-auto mb-6">
+              {/* Main Heart Container */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-2xl transform rotate-12 hover:rotate-0 transition-transform duration-500">
+                  <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Floating Icons */}
+              <div className="absolute top-0 right-0 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{animationDelay: '0.5s'}}>
+                <svg className="w-6 h-6 text-yellow-800" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              
+              <div className="absolute bottom-0 left-0 w-10 h-10 bg-pink-400 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{animationDelay: '1s'}}>
+                <svg className="w-5 h-5 text-pink-800" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              
+              <div className="absolute top-1/2 -left-4 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{animationDelay: '1.5s'}}>
+                <svg className="w-4 h-4 text-green-800" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Enhanced Content */}
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6 text-orange-600 font-bold leading-tight">
+              <span className="block">Spread Joy &</span>
+              <span className="block gradient-text">Appreciation</span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto text-orange-500 leading-relaxed">
+              Create beautiful, personalized appreciation cards that brighten someone's day and strengthen relationships.
+            </p>
+            
+            {/* Feature Icons */}
+            <div className="flex flex-wrap justify-center gap-8 mb-8 text-orange-600">
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Beautiful Templates</span>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Easy Sharing</span>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">From the Heart</span>
+              </div>
+            </div>
+            
+            <button
+              className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              onClick={() => handleStepChange(1)}
+            >
+              <span className="flex items-center space-x-2">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>Start Creating Appreciation</span>
+              </span>
+            </button>
+          </div>
         </section>
-        <footer className="w-full text-center py-4 sm:py-6 border-t border-orange-100 mt-auto bg-white px-4">
+        
+        <footer className="w-full text-center py-6 border-t border-orange-100 mt-auto bg-white/80 backdrop-blur-sm relative z-10 px-4">
           <span className="text-orange-500">Powered by </span>
           <Link href="https://techpremi.com" className="text-orange-600 font-bold hover:underline transition-colors duration-200" target="_blank" rel="noopener noreferrer">TechPremi.com</Link>
         </footer>
